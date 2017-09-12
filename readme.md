@@ -29,8 +29,8 @@ To run the program:
 `python3 main.py`
 
 
-To filter tweets by keyword, change the `track` parameter in the last line of `main.py`:
+To filter tweets by keyword, add words to the `track` array in line 16:
 
 ```
-twitter_stream.filter(track=['Enter', 'comma separated', keywords'])
+track = ['Enter', 'keywords', 'here']
 ```

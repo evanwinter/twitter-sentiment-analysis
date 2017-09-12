@@ -13,6 +13,8 @@ auth.set_access_token(config.access_token, config.access_secret)
 
 api = tweepy.API(auth)
 
+track = ['Ted Cruz']
+
 if (not api):
 	print("Can't authenticate")
 	sys.exit(-1)
@@ -34,20 +36,20 @@ def analyze_tweet(tweet):
 	pos_list = []
 	neg_list = []
 
-	res = sia.polarity_scores(tweet['text'])
+	res = sia.polarity_scores(tweet['text']) 
 
 	if res['compound'] > 0.2:
 		pos_list.append(tweet['text'])
 	elif res['compound'] < -0.2:
 		neg_list.append(tweet['text'])
 
-	with open("pos_tweets.txt", "w") as f_pos:
+	with open("pos_tweets.txt", "a") as f_pos:
 		for post in pos_list:
-			f_pos.write(tweet['text'] + "\n")
+			f_pos.write(tweet['text'] + "\n\n")
 
-	with open("neg_tweets.txt", "w") as f_neg:
+	with open("neg_tweets.txt", "a") as f_neg:
 		for post in neg_list:
-			f_neg.write(tweet['text'] + "\n")
+			f_neg.write(tweet['text'] + "\n\n")
 
 	return res
 
@@ -78,4 +80,4 @@ class MyListener(StreamListener):
 		return True
 
 twitter_stream = Stream(auth, MyListener())
-twitter_stream.filter(track=['Donald Trump'])
+twitter_stream.filter(track=track)
