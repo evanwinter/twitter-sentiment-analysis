@@ -27,3 +27,10 @@ access_secret = 'XXX'
 To run the program:
 
 `python3 main.py`
+
+
+To filter tweets by keyword, change the `track` parameter in the last line of `main.py`:
+
+```
+twitter_stream.filter(track=['Enter', 'comma separated', keywords'])
+```

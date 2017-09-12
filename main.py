@@ -78,4 +78,4 @@ class MyListener(StreamListener):
 		return True
 
 twitter_stream = Stream(auth, MyListener())
-twitter_stream.filter(track=["wendy's", 'wendys', 'b dubs', 'bduds', 'buffalo wild wings', "popeye's", 'popeyes'])
+twitter_stream.filter(track=['Donald Trump'])
