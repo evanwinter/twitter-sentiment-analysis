@@ -7,6 +7,7 @@ Perform sentiment analysis on tweets in real time.
 In your terminal:
 
 `git clone https://github.com/evanwinter/twitter-sentiment-analysis.git`
+
 `cd twitter-sentiment-analysis`
 
 [Register a Twitter application](https://apps.twitter.com/app/new) so you can access their API.
