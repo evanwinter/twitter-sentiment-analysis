@@ -13,7 +13,7 @@ auth.set_access_token(config.access_token, config.access_secret)
 
 api = tweepy.API(auth)
 
-track = ['Ted Cruz']
+track = ['#Eminem']
 
 if (not api):
 	print("Can't authenticate")
